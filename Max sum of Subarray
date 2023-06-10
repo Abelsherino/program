@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static int a(int[] num)
+    {
+        int b = num[0];
+        int c = num[0];
+
+        for (int i = 1; i < num.Length; i++)
+        {
+            c = Math.Max(num[i], c + num[i]);
+            b = Math.Max(b,c);
+        }
+
+        return b;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] num = { 1, -2, 3, 10, -4, 7, 2, -5 };
+
+        int b = a(num);
+        Console.WriteLine("Maximum sum of contiguous subarray: " + b);
+    }
+}
